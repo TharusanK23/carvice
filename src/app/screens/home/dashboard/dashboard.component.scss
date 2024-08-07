@@ -1,0 +1,132 @@
+.dashboard {
+    .chart {
+        .chart-card {
+            padding: 24px;
+            background: var(--sidebar-color);
+            border-radius: 18px;
+        }
+        .chart-title {
+            font-size: 18px;
+            font-weight: 600;
+            padding: 24px;
+        }
+        .profit-view {
+            height: 400px;
+        }
+
+        .traffic-view, .sales-view {
+            height: 188px;
+            width: 100%;
+
+            .traffic-content {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .traffic-view, .sales-view {
+        margin-top: 24px;
+    }
+    .traffic-view {
+        margin-right: 12px;
+    }
+    .sales-view {
+        margin-left: 12px;
+    }
+}
+
+
+
+
+
+
+.timeline-view {
+    background: var(--sidebar-color);
+    border-radius: 18px;
+    padding: 24px;
+    margin: 24px 24px 24px 0;
+
+    .chart-title {
+        font-size: 18px;
+        font-weight: 600;
+        padding: 0 0 24px 0;
+    }
+
+    .tl-item {
+        border-radius: 3px;
+        position: relative;
+        display: -ms-flexbox;
+        display: flex;
+        z-index: 2;
+
+        .tl-dot {
+            position: relative;
+            border-color: rgba(160, 175, 185, .15)
+        }
+        .tl-dot:after,
+        .tl-dot:before {
+            content: '';
+            position: absolute;
+            border-color: inherit;
+            border-width: 2px;
+            border-style: solid;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+
+        .tl-dot:after {
+            width: 0;
+            height: auto;
+            top: 25px;
+            bottom: -15px;
+            border-right-width: 0;
+            border-top-width: 0;
+            border-bottom-width: 0;
+            border-radius: 0
+        }
+
+        .tl-content p:last-child {
+            margin-bottom: 0
+        }
+        
+        .tl-date {
+            font-size: .85em;
+            margin-top: 2px;
+            min-width: 100px;
+            max-width: 100px
+        }
+    }
+    .tl-item>* {
+        padding: 10px
+    }
+
+    .tl-item.active .tl-dot:before {
+        border-color: #448bff;
+        box-shadow: 0 0 0 4px rgba(68, 139, 255, .2)
+    }
+    
+    .tl-item:last-child .tl-dot:after {
+        height: 50%;
+    }
+}
+
+
+.b-warning {
+    border-color: #f4c414!important;
+}
+
+.b-primary {
+    border-color: #448bff!important;
+}
+
+.b-danger {
+    border-color: #f54394!important;
+}

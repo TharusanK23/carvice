@@ -1,13 +1,14 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
-import { routes } from './app.routes';
+import { AppRoutes } from './app.routes';
+import { BrowserModule } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }), 
-    provideRouter(routes),
+    importProvidersFrom(BrowserModule, AppRoutes),
     { provide: LocationStrategy, useClass: HashLocationStrategy },
+    provideAnimations(),
   ]
 };

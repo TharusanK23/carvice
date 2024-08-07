@@ -1,1 +1,110 @@
-<p>dashboard works!</p>
+<div class="dashboard">
+    <div class="row chart">
+        <div class="col-12 col-lg-8">
+            <div class="chart-card profit-view">
+                <div class="chart-title p-0">
+                    Profit & Expenses
+                </div>
+                <apx-chart
+                    [series]="profitExpanceChart.series"
+                    [dataLabels]="profitExpanceChart.dataLabels"
+                    [chart]="profitExpanceChart.chart"
+                    [legend]="profitExpanceChart.legend"
+                    [xaxis]="profitExpanceChart.xaxis"
+                    [yaxis]="profitExpanceChart.yaxis"
+                    [grid]="profitExpanceChart.grid"
+                    [stroke]="profitExpanceChart.stroke"
+                    [tooltip]="profitExpanceChart.tooltip"
+                    [plotOptions]="profitExpanceChart.plotOptions"
+                ></apx-chart>
+            </div>
+        </div>
+        <div class="col-12 col-lg-4 d-flex flex-row d-lg-flex flex-lg-column justify-content-between">
+            <div class="chart-card traffic-view">
+                <div class="chart-title p-0">
+                    Traffic Distribution
+                </div>
+                <div class="traffic-content">
+                    <div>
+                        <h4 class="fw-bold">$36,358</h4>
+                    </div>
+                    <apx-chart
+                        [series]="trafficChart.series"
+                        [labels]="trafficChart.labels"
+                        [dataLabels]="trafficChart.dataLabels"
+                        [chart]="trafficChart.chart"
+                        [legend]="trafficChart.legend"
+                        [colors]="trafficChart.colors"
+                        [stroke]="trafficChart.stroke"
+                        [tooltip]="trafficChart.tooltip"
+                        [plotOptions]="trafficChart.plotOptions"
+                        [responsive]="trafficChart.responsive"
+                    ></apx-chart>
+                </div>
+            </div>
+            <div class="chart-card d-flex flex-column justify-content-between sales-view p-0">
+                <div class="chart-title">
+                    Product Sales
+                </div>
+                <apx-chart
+                    [series]="salesChart.series"
+                    [dataLabels]="salesChart.dataLabels"
+                    [chart]="salesChart.chart"
+                    [legend]="salesChart.legend"
+                    [colors]="salesChart.colors"
+                    [stroke]="salesChart.stroke"
+                    [tooltip]="salesChart.tooltip"
+                    [plotOptions]="salesChart.plotOptions"
+                    [responsive]="salesChart.responsive"
+                ></apx-chart>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="timeline-view">
+                <div class="chart-title">
+                    Upcoming Service
+                </div>
+                <div class="timeline">
+                    <div class="tl-item active">
+                        <div class="tl-dot b-danger"></div>
+                        <div class="tl-content">
+                            <div class="">CBA 4526, CBS 2584, BDF 7851</div>
+                            <div class="tl-date text-muted mt-1">02:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot b-danger"></div>
+                        <div class="tl-content">
+                            <div class="">CBA 4526, CBS 2584, BDF 7851</div>
+                            <div class="tl-date text-muted mt-1">12:00 PM</div>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot b-warning"></div>
+                        <div class="tl-content">
+                            <div class="">CBA 4526, CBS 2584, BDF 7851</div>
+                            <div class="tl-date text-muted mt-1">11:00AM</div>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot b-primary"></div>
+                        <div class="tl-content">
+                            <div class="">CBA 4526, CBS 2584, BDF 7851</div>
+                            <div class="tl-date text-muted mt-1">10:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="tl-item">
+                        <div class="tl-dot b-primary"></div>
+                        <div class="tl-content">
+                            <div class="">CBA 4526, CBS 2584, BDF 7851</div>
+                            <div class="tl-date text-muted mt-1">09:00 AM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

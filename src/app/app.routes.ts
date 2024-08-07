@@ -1,5 +1,6 @@
-import { Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './layouts/main/main.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
     {
@@ -18,3 +19,10 @@ export const routes: Routes = [
         ],
       },
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, scrollPositionRestoration: 'top' })],
+  exports: [RouterModule]
+})
+export class AppRoutes { }
+
