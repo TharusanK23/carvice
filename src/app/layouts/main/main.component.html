@@ -16,42 +16,42 @@
       <div class="menu">
           <ul class="sidebar-links" id="sidebarnav">
             <li class="h-100">
-                <div class="subtitle">Home</div>
+                <div class="subtitle">{{'home' | translate}}</div>
             </li>
               <li class="sidebar-link">
                   <a [routerLink]="['/dashboard']" routerLinkActive="active">
                       <i class='bx bx-home-alt icon'></i>
-                      <span class="text sidebar-text">Dashboard</span>
+                      <span class="text sidebar-text">{{'dashboard' | translate}}</span>
                   </a>
               </li>
               <li class="h-100">
-                <div class="subtitle">Setup</div>
+                <div class="subtitle">{{'setup' | translate}}</div>
               </li>
               <li class="sidebar-link">
                   <a [routerLink]="['/setup/add-car']" routerLinkActive="active">
                       <i class='bx bx-car icon'></i>
-                      <span class="text sidebar-text">Add Car</span>
+                      <span class="text sidebar-text">{{'add_car' | translate}}</span>
                   </a>
               </li>
               <li class="sidebar-link">
                   <a [routerLink]="['/setup/car-work']" routerLinkActive="active">
                       <i class='bx bx-health icon'></i>
-                      <span class="text sidebar-text">Repair</span>
+                      <span class="text sidebar-text">{{'repair' | translate}}</span>
                   </a>
               </li>
               <li class="sidebar-link">
                   <a [routerLink]="['/setup/car-progress']" routerLinkActive="active">
                       <i class='bx bxs-traffic icon'></i>
-                      <span class="text sidebar-text">Progress</span>
+                      <span class="text sidebar-text">{{'progress' | translate}}</span>
                   </a>
               </li>
               <li class="h-100">
-                <div class="subtitle">Local</div>
+                <div class="subtitle">{{'local' | translate}}</div>
               </li>
               <li class="sidebar-link">
-                  <a href="">
+                  <a (click)="changeLang()">
                       <i class='bx bx-cog icon'></i>
-                      <span class="text sidebar-text">English</span>
+                      <span class="text sidebar-text">{{selectedLanguage.code === 'en-gb' ? 'Norway' : 'English'}}</span>
                   </a>
               </li>
           </ul>
@@ -61,7 +61,7 @@
           <li class="sidebar-link">
               <a href="">
                   <i class='bx bx-log-out icon'></i>
-                  <span class="text sidebar-text">Logout</span>
+                  <span class="text sidebar-text">{{'logout' | translate}}</span>
               </a>
           </li>
       </div>

@@ -1,0 +1,10 @@
+{
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "setup": "Setup",
+    "add_car": "Add Car",
+    "repair": "Repair",
+    "progress": "Progress",
+    "local": "Local",
+    "logout": "Logout"
+}

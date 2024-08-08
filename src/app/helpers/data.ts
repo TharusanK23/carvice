@@ -549,3 +549,20 @@ export const Cars = [
         status: 3
     }
 ];
+
+export const Languages = [
+    {
+        id: "82a8cf56-d4e9-4d30-9db1-08dc59527154",
+        name: "English",
+        code: "en-gb",
+        inLanguage: "English",
+        flag: "https://flagcdn.com/gb.svg"
+    },
+    {
+        id: "533ba23c-22eb-4e50-2092-08dc5957bb25",
+        name: "Norway",
+        code: "nb-no",
+        inLanguage: "Norway",
+        flag: "https://flagcdn.com/no.svg"
+    }
+];
