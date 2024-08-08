@@ -15,40 +15,43 @@
   <div class="sidebar-menu">
       <div class="menu">
           <ul class="sidebar-links" id="sidebarnav">
+            <li class="h-100">
+                <div class="subtitle">Home</div>
+            </li>
               <li class="sidebar-link">
                   <a [routerLink]="['/dashboard']" routerLinkActive="active">
                       <i class='bx bx-home-alt icon'></i>
                       <span class="text sidebar-text">Dashboard</span>
                   </a>
               </li>
+              <li class="h-100">
+                <div class="subtitle">Setup</div>
+              </li>
               <li class="sidebar-link">
-                  <a href="">
-                      <i class='bx bx-bar-chart-alt-2 icon'></i>
-                      <span class="text sidebar-text">Revenue</span>
+                  <a [routerLink]="['/setup/add-car']" routerLinkActive="active">
+                      <i class='bx bx-car icon'></i>
+                      <span class="text sidebar-text">Add Car</span>
                   </a>
               </li>
               <li class="sidebar-link">
-                  <a href="">
-                      <i class='bx bx-bell icon'></i>
-                      <span class="text sidebar-text">Notification</span>
+                  <a [routerLink]="['/setup/car-work']" routerLinkActive="active">
+                      <i class='bx bx-health icon'></i>
+                      <span class="text sidebar-text">Repair</span>
                   </a>
               </li>
               <li class="sidebar-link">
-                  <a href="">
-                      <i class='bx bx-pie-chart-alt icon'></i>
-                      <span class="text sidebar-text">Analytics</span>
+                  <a [routerLink]="['/setup/car-progress']" routerLinkActive="active">
+                      <i class='bx bxs-traffic icon'></i>
+                      <span class="text sidebar-text">Progress</span>
                   </a>
+              </li>
+              <li class="h-100">
+                <div class="subtitle">Local</div>
               </li>
               <li class="sidebar-link">
                   <a href="">
-                      <i class='bx bx-heart icon'></i>
-                      <span class="text sidebar-text">Likes</span>
-                  </a>
-              </li>
-              <li class="sidebar-link">
-                  <a href="">
-                      <i class='bx bx-wallet icon'></i>
-                      <span class="text sidebar-text">Wallets</span>
+                      <i class='bx bx-cog icon'></i>
+                      <span class="text sidebar-text">English</span>
                   </a>
               </li>
           </ul>
@@ -64,7 +67,7 @@
       </div>
   </div>
 </nav>
-<section class="home">
+<section class="home mb-4">
     <app-nav-bar></app-nav-bar>
   <div class="text">
       <router-outlet></router-outlet>

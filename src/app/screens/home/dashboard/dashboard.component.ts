@@ -16,14 +16,14 @@ export class DashboardComponent {
     this.profitExpanceChart = {
       series: [
         {
-          name: 'Eanings this month',
-          data: [9, 5, 3, 7, 5, 10, 3],
-          color: '#0085db',
+          name: 'In Jop this day',
+          data: [150, 70, 90, 45, 59, 100, 123],
+          color: '#695CFE',
         },
         {
-          name: 'Expense this month',
-          data: [6, 3, 9, 5, 4, 6, 4],
-          color: '#fb977d',
+          name: 'Completed this day',
+          data: [140, 103, 79, 25, 84, 46, 94],
+          color: '#008000',
         },
       ],
 
@@ -85,18 +85,18 @@ export class DashboardComponent {
 
     // yearly breakup chart
     this.trafficChart = {
-      series: [5368, 3500, 4106],
-      labels: ['5368', 'Refferal Traffic', 'Oragnic Traffic'],
+      series: [65, 50, 100],
+      labels: ['Need Work', 'In Job', 'Completed'],
       chart: {
         type: 'donut',
-        fontFamily: "'Plus Jakarta Sans', sans-serif;",
+        fontFamily: "'Raleway', sans-serif;",
         foreColor: '#adb0bb',
         toolbar: {
           show: false,
         },
         height: 160,
       },
-      colors: ['#e7ecf0', '#fb977d', '#0085db'],
+      colors: ['#ff0000', '#ffa500', '#008000'],
       plotOptions: {
         pie: {
           donut: {
@@ -105,13 +105,10 @@ export class DashboardComponent {
             labels: {
               show: true,
               name: {
-                show: true,
-                fontSize: '12px',
-                color: undefined,
-                offsetY: 5,
+                show: false,
               },
               value: {
-                show: false,
+                show: true,
                 color: '#98aab4',
               },
             },
@@ -125,7 +122,7 @@ export class DashboardComponent {
         enabled: false,
       },
       legend: {
-        show: false,
+        show: true,
       },
       responsive: [
         {
@@ -154,7 +151,7 @@ export class DashboardComponent {
 
       chart: {
         type: 'area',
-        fontFamily: "'Plus Jakarta Sans', sans-serif;",
+        fontFamily: "'Raleway', sans-serif;",
         foreColor: '#adb0bb',
         toolbar: {
           show: false,

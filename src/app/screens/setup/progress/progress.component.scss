@@ -1,0 +1,212 @@
+.progress-view {
+  padding: 24px;
+  background: var(--sidebar-color);
+  border-radius: 18px;
+
+  .status {
+    position: relative;
+
+    .title {
+      margin-left: 30px;
+      font-weight: 600;
+    }
+    .circle {
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255, 0, 0, 0.500);
+      border-radius: 50%;
+      position: absolute;
+
+      &::after {
+        content: ' ';
+        width: 10px;
+        height: 10px;
+        background-color: red;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    .circle.done {
+      background-color: rgba(0, 128, 0, 0.500) !important;
+      &::after {
+        background-color: green;
+      }
+    }
+    .circle.ongoing {
+      background-color: rgba(255, 166, 0, 0.500) !important;
+      &::after {
+        background-color: orange;
+      }
+    }
+  }
+
+  .timeline {
+    display: grid;
+    place-items: center;
+
+    .container {
+      width: 85%;
+      height: auto;
+      position: relative;
+  
+      &::after {
+        position: absolute;
+        content: ' ';
+        width: 2px;
+        height: 100%;
+        background-image: linear-gradient(to bottom, #000, #000);
+      }
+  
+      ul {
+        list-style: none;
+        margin: 0;
+  
+        li {
+          width: 50%;
+          height: auto;
+          padding: 15px 20px;
+          background-color: var(--sidebar-color);
+          box-shadow: 1px 1px 25px rgb(0, 0, 0, 0.384);
+          border-radius: 10px;
+          margin-bottom: 30px;
+          z-index: 99;
+          position: relative;
+  
+          &:nth-child(odd) {
+            float: left;
+            clear: right;
+            transform: translateX(-30px);
+            text-align: right;
+          }
+          &:nth-child(even) {
+            float: right;
+            clear: left;
+            transform: translateX(30px);
+          }
+          &:last-child {
+            margin-bottom: 0;
+          }
+
+          .title {
+            font-size: 20px;
+            font-weight: 500;
+            color: rgb(106, 6, 236);
+          }
+
+          p {
+            font-size: 15px;
+            color: #444;
+            margin: 7px 0;
+            line-height: 23px;
+          }
+
+          .date {
+            position: absolute;
+            top: -40px;
+            padding: 0 24px;
+            height: 35px;
+            border-radius: 18px;
+            color: #fff;
+            background-color: red;
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+          }
+
+          .date.done {
+            background-color: green !important;
+          }
+          .date.ongoing {
+            background-color: orange !important;
+          }
+
+          &:nth-child(odd) .date {
+            right: 20px;
+          }
+
+          .circle {
+            width: 30px;
+            height: 30px;
+            background-color: rgba(255, 0, 0, 0.500);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+
+            &::after {
+              content: ' ';
+              width: 20px;
+              height: 20px;
+              background-color: red;
+              border-radius: 50%;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .circle.done {
+            background-color: rgba(0, 128, 0, 0.500) !important;
+            &::after {
+              background-color: green;
+            }
+          }
+          .circle.ongoing {
+            background-color: rgba(255, 166, 0, 0.500) !important;
+            &::after {
+              background-color: orange;
+            }
+          }
+          &:nth-child(odd) .circle {
+            right: -30px;
+            transform: translate(50%, -50%);
+          }
+          &:nth-child(even) .circle {
+            left: -30px;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    width: 100% !important;
+    transform: translateX(15px) !important;
+
+    &::after {
+      top: 0 !important;
+    }
+
+    ul {
+      li {
+        width: 100% !important;
+        float: none !important;
+        clear: none !important;
+        margin-bottom: 80px !important;
+
+        &:nth-child(odd) {
+          transform: translateX(0) !important;
+          text-align: left !important;
+        }
+        &:nth-child(odd) .date {
+          left: 20px !important;
+        }
+        &:nth-child(odd) .circle {
+          left: -30px !important;
+          transform: translate(-50%, -50%) !important;
+        }
+        &:nth-child(even) {
+          transform: translateX(0) !important;
+        }
+        &:last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,84 @@
+<div class="car-work-view">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="form-title mb-2">
+                Car Number
+            </div>
+            <div>
+                <ng-select class="cars" [items]="cars" bindLabel="carNumber" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false"
+                placeholder="Select Car Number">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 col-md-6">
+            <div class="form-title mb-2">
+                Maintenance
+            </div>
+            <div>
+                <ng-select class="maintenance" [(ngModel)]="maintenanceIds" [items]="maintenance" bindLabel="name" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
+                placeholder="Select Maintenance">
+                </ng-select>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-title mb-2">
+                Repair
+            </div>
+            <div>
+                <ng-select class="repair" [(ngModel)]="repairsIds" [items]="repairs" bindLabel="name" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
+                placeholder="Select Repair">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12 col-md-6">
+            <div class="form-title mb-2">
+                Management
+            </div>
+            <div>
+                <ng-select class="management" [(ngModel)]="managementsIds" [items]="managements" bindLabel="name" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
+                placeholder="Select Management">
+                </ng-select>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="form-title mb-2">
+                Customization/Upgrades
+            </div>
+            <div>
+                <ng-select class="upgrades" [(ngModel)]="customizationsIds" [items]="customizations" bindLabel="name" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
+                placeholder="Select Customization/Upgrades">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4" *ngIf="addedWorks.length > 0">
+        <div class="col-12 col-md-6" *ngFor="let work of addedWorks.slice(0, (addedWorks.length / 2))">
+            <p>
+                <i class='bx bxs-check-circle me-2 text-success'></i>
+                <span>{{work}}</span>
+            </p>
+        </div>
+        <div class="col-12 col-md-6" *ngFor="let work of addedWorks.slice(addedWorks.length / 2)">
+            <p>
+                <i class='bx bxs-check-circle me-2 text-success'></i>
+                <span>{{work}}</span>
+            </p>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+        <button type="button" class="btn button ms-4" (click)="addedWorks.length > 0 ? addWorks() : null">Add Work</button>
+    </div>
+</div>

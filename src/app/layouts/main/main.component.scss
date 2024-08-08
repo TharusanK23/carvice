@@ -86,6 +86,11 @@
             list-style: none;
             display: flex;
             align-items: center;
+
+            .subtitle {
+                font-size: 20px;
+                font-weight: 600;
+            }
         
             a {
                 height: 100%;
@@ -146,7 +151,6 @@
 .home {
     position: relative;
     left: 250px;
-    height: 100vh;
     width: calc(100% - 250px);
     background: var(--body-color);
     transition: var(--tran-05);

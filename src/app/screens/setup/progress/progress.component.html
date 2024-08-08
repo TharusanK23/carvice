@@ -1,0 +1,101 @@
+<div class="progress-view">
+    <div class="row">
+        <div class="col-6">
+            <div class="form-title mb-2">
+                Car Number
+            </div>
+            <div>
+                <ng-select class="cars" [(ngModel)]="selectedCar.id" [items]="cars" bindLabel="carNumber" bindValue="id" 
+                [clearable]="false" [selectOnTab]="false" (change)="selecteCar($event)"
+                placeholder="Select Car Number">
+                </ng-select>
+            </div>
+        </div>
+    </div>
+
+    <div class="row status mt-4">
+      <div class="col-12 col-lg-4">
+        <span class="circle done"></span>
+        <span class="title done">Works Done</span>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span class="circle ongoing"></span>
+        <span class="title ongoing">Works On Progress</span>
+      </div>
+      <div class="col-12 col-lg-4">
+        <span class="circle"></span>
+        <span class="title">Works Still not Started</span>
+      </div>
+    </div>
+
+    <div class="row mt-5 pt-4">
+        <div class="col-12">
+          <div class="timeline">
+            <div class="container">
+              <ul>
+                <li>
+                  <h3 class="title">Scheduled</h3>
+                  <p>The job has been planned and is on the schedule but has not yet started.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 1, 'ongoing': selectedCar.status == 1}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 1, 'ongoing': selectedCar.status == 1}">Scheduled</span>
+                </li>
+                <li>
+                  <h3 class="title">In Progress</h3>
+                  <p>The service or repair work has started and is currently being carried out.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 2, 'ongoing': selectedCar.status == 2}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 2, 'ongoing': selectedCar.status == 2}">In Progress</span>
+                </li>
+                <li>
+                  <h3 class="title">Pending Parts</h3>
+                  <p>The job is awaiting specific parts or materials needed to complete the service or repair.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 3, 'ongoing': selectedCar.status == 3}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 3, 'ongoing': selectedCar.status == 3}">Pending Parts</span>
+                </li>
+                <li>
+                  <h3 class="title">On Hold</h3>
+                  <p>The job is temporarily paused due to various reasons, such as waiting for customer approval, additional diagnostics, or external factors.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 4, 'ongoing': selectedCar.status == 4}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 4, 'ongoing': selectedCar.status == 4}">On Hold</span>
+                </li>
+                <li>
+                  <h3 class="title">Under Inspection</h3>
+                  <p>The vehicle is being inspected to determine the extent of the service or repairs needed</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 5, 'ongoing': selectedCar.status == 5}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 5, 'ongoing': selectedCar.status == 5}">Under Inspection</span>
+                </li>
+                <li>
+                  <h3 class="title">Completed</h3>
+                  <p>The service or repair work has been finished, and the job is ready for review or pickup.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 6, 'ongoing': selectedCar.status == 6}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 6, 'ongoing': selectedCar.status == 6}">Completed</span>
+                </li>
+                <li>
+                  <h3 class="title">Ready for Pickup</h3>
+                  <p>The vehicle has been serviced or repaired and is ready to be returned to the customer.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 7, 'ongoing': selectedCar.status == 7}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 7, 'ongoing': selectedCar.status == 7}">Ready for Pickup</span>
+                </li>
+                <li>
+                  <h3 class="title">Awaiting Customer Approval</h3>
+                  <p>The job is finished or near completion but requires the customer's approval for additional work or costs.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 8, 'ongoing': selectedCar.status == 8}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 8, 'ongoing': selectedCar.status == 8}">Awaiting Customer Approval</span>
+                </li>
+                <li>
+                  <h3 class="title">Invoiced</h3>
+                  <p>The service or repair work has been completed, and an invoice has been generated or sent to the customer.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 9, 'ongoing': selectedCar.status == 9}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 9, 'ongoing': selectedCar.status == 9}">Invoiced</span>
+                </li>
+                <li>
+                  <h3 class="title">Closed</h3>
+                  <p>The job is completed, all payments have been settled, and any follow-up actions are finalized.</p>
+                  <span class="circle" [ngClass]="{'done': selectedCar.status > 10, 'ongoing': selectedCar.status == 10}"></span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 10, 'ongoing': selectedCar.status == 10}">Closed</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
