@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="form-title mb-2">
-                Car Number
+                {{'car_number' | translate}}
             </div>
             <div>
                 <ng-select class="cars" [items]="cars" bindLabel="carNumber" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false"
-                placeholder="Select Car Number">
+                placeholder="{{'select_car_number' | translate}}">
                 </ng-select>
             </div>
         </div>
@@ -16,23 +16,23 @@
     <div class="row mt-4">
         <div class="col-12 col-md-6">
             <div class="form-title mb-2">
-                Maintenance
+                {{'maintenance' | translate}}
             </div>
             <div>
                 <ng-select class="maintenance" [(ngModel)]="maintenanceIds" [items]="maintenance" bindLabel="name" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
-                placeholder="Select Maintenance">
+                placeholder="{{'select_maintenance' | translate}}">
                 </ng-select>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <div class="form-title mb-2">
-                Repair
+                {{'repair' | translate}}
             </div>
             <div>
                 <ng-select class="repair" [(ngModel)]="repairsIds" [items]="repairs" bindLabel="name" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
-                placeholder="Select Repair">
+                placeholder="{{'select_repair' | translate}}">
                 </ng-select>
             </div>
         </div>
@@ -41,23 +41,23 @@
     <div class="row mt-4">
         <div class="col-12 col-md-6">
             <div class="form-title mb-2">
-                Management
+                {{'management' | translate}}
             </div>
             <div>
                 <ng-select class="management" [(ngModel)]="managementsIds" [items]="managements" bindLabel="name" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
-                placeholder="Select Management">
+                placeholder="{{'select_management' | translate}}">
                 </ng-select>
             </div>
         </div>
         <div class="col-12 col-md-6">
             <div class="form-title mb-2">
-                Customization/Upgrades
+                {{'customization' | translate}}/{{'upgrades' | translate}}
             </div>
             <div>
                 <ng-select class="upgrades" [(ngModel)]="customizationsIds" [items]="customizations" bindLabel="name" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false" [multiple]="true" (change)="setAddedWorks()"
-                placeholder="Select Customization/Upgrades">
+                placeholder="{{'select_customization' | translate}}/{{'upgrades' | translate}}">
                 </ng-select>
             </div>
         </div>
@@ -79,6 +79,6 @@
     </div>
 
     <div class="d-flex justify-content-end mt-4">
-        <button type="button" class="btn button ms-4" (click)="addedWorks.length > 0 ? addWorks() : null">Add Work</button>
+        <button type="button" class="btn button ms-4" (click)="addedWorks.length > 0 ? addWorks() : null">{{'add_works' | translate}}</button>
     </div>
 </div>

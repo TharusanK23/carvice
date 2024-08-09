@@ -49,9 +49,11 @@
                 <div class="subtitle">{{'local' | translate}}</div>
               </li>
               <li class="sidebar-link">
-                  <a (click)="changeLang()">
-                      <i class='bx bx-cog icon'></i>
-                      <span class="text sidebar-text">{{selectedLanguage.code === 'en-gb' ? 'Norway' : 'English'}}</span>
+                  <a class="local" (click)="changeLang()">
+                      <!-- <i class='bx bx-cog icon'></i> -->
+                        <img src="https://flagcdn.com/no.svg" class="ms-2" alt="" width="40" height="30" *ngIf="selectedLanguage.code === 'en-gb'">
+                       <img src="https://flagcdn.com/gb.svg" class="ms-2" alt="" width="40" height="30" *ngIf="selectedLanguage.code === 'nb-no'">
+                      <span class="text sidebar-text ms-3">{{selectedLanguage.code === 'en-gb' ? 'Norway' : 'English'}}</span>
                   </a>
               </li>
           </ul>
@@ -59,7 +61,7 @@
 
       <div class="bottom-content">
           <li class="sidebar-link">
-              <a href="">
+              <a class="local">
                   <i class='bx bx-log-out icon'></i>
                   <span class="text sidebar-text">{{'logout' | translate}}</span>
               </a>

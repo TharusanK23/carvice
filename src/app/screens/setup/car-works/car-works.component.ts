@@ -3,11 +3,12 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { Cars, Customizations, Maintenance, Managements, Repairs } from '../../../helpers/data';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-car-works',
   standalone: true,
-  imports: [CommonModule, NgSelectModule, FormsModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, TranslateModule],
   templateUrl: './car-works.component.html',
   styleUrl: './car-works.component.scss'
 })

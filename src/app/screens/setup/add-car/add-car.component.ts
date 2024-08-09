@@ -3,11 +3,12 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { CarBrands, FuelTypes } from '../../../helpers/data';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-car',
   standalone: true,
-  imports: [CommonModule, NgSelectModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, NgSelectModule, FormsModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './add-car.component.html',
   styleUrl: './add-car.component.scss'
 })

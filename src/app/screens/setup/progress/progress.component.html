@@ -2,12 +2,12 @@
     <div class="row">
         <div class="col-6">
             <div class="form-title mb-2">
-                Car Number
+                {{'car_number' | translate}}
             </div>
             <div>
                 <ng-select class="cars" [(ngModel)]="selectedCar.id" [items]="cars" bindLabel="carNumber" bindValue="id" 
                 [clearable]="false" [selectOnTab]="false" (change)="selecteCar($event)"
-                placeholder="Select Car Number">
+                placeholder="{{'select_car_number' | translate}}">
                 </ng-select>
             </div>
         </div>
@@ -16,15 +16,15 @@
     <div class="row status mt-4">
       <div class="col-12 col-lg-4">
         <span class="circle done"></span>
-        <span class="title done">Works Done</span>
+        <span class="title done">{{'works_done' | translate}}</span>
       </div>
       <div class="col-12 col-lg-4">
         <span class="circle ongoing"></span>
-        <span class="title ongoing">Works On Progress</span>
+        <span class="title ongoing">{{'works_on_progress' | translate}}</span>
       </div>
       <div class="col-12 col-lg-4">
         <span class="circle"></span>
-        <span class="title">Works Still not Started</span>
+        <span class="title">{{'works_not_started' | translate}}</span>
       </div>
     </div>
 
@@ -34,64 +34,64 @@
             <div class="container">
               <ul>
                 <li>
-                  <h3 class="title">Scheduled</h3>
+                  <h3 class="title">{{'scheduled' | translate}}</h3>
                   <p>The job has been planned and is on the schedule but has not yet started.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 1, 'ongoing': selectedCar.status == 1}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 1, 'ongoing': selectedCar.status == 1}">Scheduled</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 1, 'ongoing': selectedCar.status == 1}">{{'scheduled' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">In Progress</h3>
+                  <h3 class="title">{{'in_progress' | translate}}</h3>
                   <p>The service or repair work has started and is currently being carried out.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 2, 'ongoing': selectedCar.status == 2}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 2, 'ongoing': selectedCar.status == 2}">In Progress</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 2, 'ongoing': selectedCar.status == 2}">{{'in_progress' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Pending Parts</h3>
+                  <h3 class="title">{{'pending_parts' | translate}}</h3>
                   <p>The job is awaiting specific parts or materials needed to complete the service or repair.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 3, 'ongoing': selectedCar.status == 3}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 3, 'ongoing': selectedCar.status == 3}">Pending Parts</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 3, 'ongoing': selectedCar.status == 3}">{{'pending_parts' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">On Hold</h3>
+                  <h3 class="title">{{'on_hold' | translate}}</h3>
                   <p>The job is temporarily paused due to various reasons, such as waiting for customer approval, additional diagnostics, or external factors.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 4, 'ongoing': selectedCar.status == 4}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 4, 'ongoing': selectedCar.status == 4}">On Hold</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 4, 'ongoing': selectedCar.status == 4}">{{'on_hold' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Under Inspection</h3>
+                  <h3 class="title">{{'under_inspection' | translate}}</h3>
                   <p>The vehicle is being inspected to determine the extent of the service or repairs needed</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 5, 'ongoing': selectedCar.status == 5}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 5, 'ongoing': selectedCar.status == 5}">Under Inspection</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 5, 'ongoing': selectedCar.status == 5}">{{'under_inspection' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Completed</h3>
+                  <h3 class="title">{{'completed' | translate}}</h3>
                   <p>The service or repair work has been finished, and the job is ready for review or pickup.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 6, 'ongoing': selectedCar.status == 6}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 6, 'ongoing': selectedCar.status == 6}">Completed</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 6, 'ongoing': selectedCar.status == 6}">{{'completed' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Ready for Pickup</h3>
+                  <h3 class="title">{{'ready_for_pickup' | translate}}</h3>
                   <p>The vehicle has been serviced or repaired and is ready to be returned to the customer.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 7, 'ongoing': selectedCar.status == 7}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 7, 'ongoing': selectedCar.status == 7}">Ready for Pickup</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 7, 'ongoing': selectedCar.status == 7}">{{'ready_for_pickup' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Awaiting Customer Approval</h3>
+                  <h3 class="title">{{'awaiting_customer_approval' | translate}}</h3>
                   <p>The job is finished or near completion but requires the customer's approval for additional work or costs.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 8, 'ongoing': selectedCar.status == 8}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 8, 'ongoing': selectedCar.status == 8}">Awaiting Customer Approval</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 8, 'ongoing': selectedCar.status == 8}">{{'awaiting_customer_approval' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Invoiced</h3>
+                  <h3 class="title">{{'invoiced' | translate}}</h3>
                   <p>The service or repair work has been completed, and an invoice has been generated or sent to the customer.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 9, 'ongoing': selectedCar.status == 9}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 9, 'ongoing': selectedCar.status == 9}">Invoiced</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 9, 'ongoing': selectedCar.status == 9}">{{'invoiced' | translate}}</span>
                 </li>
                 <li>
-                  <h3 class="title">Closed</h3>
+                  <h3 class="title">{{'closed' | translate}}</h3>
                   <p>The job is completed, all payments have been settled, and any follow-up actions are finalized.</p>
                   <span class="circle" [ngClass]="{'done': selectedCar.status > 10, 'ongoing': selectedCar.status == 10}"></span>
-                  <span class="date" [ngClass]="{'done': selectedCar.status > 10, 'ongoing': selectedCar.status == 10}">Closed</span>
+                  <span class="date" [ngClass]="{'done': selectedCar.status > 10, 'ongoing': selectedCar.status == 10}">{{'closed' | translate}}</span>
                 </li>
               </ul>
             </div>

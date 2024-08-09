@@ -11,62 +11,62 @@
                         <img src="images/car-3.jpg" alt="">
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn button">Upload Image</button>
+                        <button type="button" class="btn button">{{'upload_image' | translate}}</button>
                     </div>
                 </div>
                 
                 <div class="w-100 ps-4">
                     <div class="w-100">
                         <div class="form-title mb-2">
-                            Customer Name
+                            {{'customer_name' | translate}}
                         </div>
                         <div class="form-floating" [ngClass]="{'error-border': (isSubmitted && addCarForm!.get('customerName')!.errors)}">
-                            <input class="form-control" placeholder="Customer Name" id="name" formControlName="customerName">
-                            <label for="name">Customer Name</label>
+                            <input class="form-control" placeholder="{{'customer_name' | translate}}" id="name" formControlName="customerName">
+                            <label for="name">{{'customer_name' | translate}}</label>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between field-flex">
                         <div class="mt-4 w-100 me-3">
                             <div class="form-title mb-2">
-                                Phone Number
+                                {{'phone_number' | translate}}
                             </div>
                             <div class="form-floating" [ngClass]="{'error-border': (isSubmitted && addCarForm!.get('phone')!.errors)}">
-                                <input type="number" class="form-control number-input-field" placeholder="Phone Number" id="number" 
+                                <input type="number" class="form-control number-input-field" placeholder="{{'phone_number' | translate}}" id="number" 
                                     formControlName="phone" onwheel="this.blur()">
-                                <label for="number">Phone Number</label>
+                                <label for="number">{{'phone_number' | translate}}</label>
                             </div>
                         </div>
                         <div class="mt-4 w-100 ms-3">
                             <div class="form-title mb-2">
-                                Mileage
+                                {{'mileage' | translate}}
                             </div>
                             <div class="form-floating" [ngClass]="{'error-border': (isSubmitted && addCarForm!.get('mileage')!.errors)}">
-                                <input type="number" class="form-control number-input-field" placeholder="Mileage" id="mileage"
+                                <input type="number" class="form-control number-input-field" placeholder="{{'mileage' | translate}}" id="mileage"
                                     formControlName="mileage" onwheel="this.blur()">
-                                <label for="mileage">Mileage</label>
+                                <label for="mileage">{{'mileage' | translate}}</label>
                             </div>
                         </div>
                     </div>
                     <div class="d-flex justify-content-between field-flex">
                         <div class="mt-4 w-100 me-3">
                             <div class="form-title mb-2">
-                                Make
+                                {{'make' | translate}}
                             </div>
                             <div [ngClass]="{'error-border': (isSubmitted && addCarForm!.get('make')!.errors)}">
                                 <ng-select class="makes" [items]="carMakes" bindLabel="name" bindValue="id" 
                                 [clearable]="false"[selectOnTab]="false" (change)="selectCarMake($event)"
-                                placeholder="Select Make" formControlName="make">
+                                placeholder="{{'select_make' | translate}}" formControlName="make">
                                 </ng-select>
                             </div>
                         </div>
                         <div class="mt-4 w-100 ms-3">
                             <div class="form-title mb-2">
-                                Model
+                                {{'model' | translate}}
                             </div>
                             <div [ngClass]="{'error-border': (isSubmitted && selectedCardMake && addCarForm!.get('model')!.errors)}">
                                 <ng-select class="models" [items]="selectedCardMake?.models" bindLabel="name" bindValue="id" 
                                 [clearable]="false"[selectOnTab]="false" [readonly]="!selectedCardMake"  (change)="selectCarModel($event)"
-                                placeholder="Select Model" formControlName="model">
+                                placeholder="{{'select_model' | translate}}" formControlName="model">
                                 </ng-select>
                             </div>
                         </div>
@@ -74,23 +74,23 @@
                     <div class="d-flex justify-content-between field-flex">
                         <div class="mt-4 w-100 me-3">
                             <div class="form-title mb-2">
-                                Type
+                                {{'type' | translate}}
                             </div>
                             <div [ngClass]="{'error-border': (isSubmitted && selectedCardModel && addCarForm!.get('type')!.errors)}">
                                 <ng-select class="types" [items]="selectedCardModel?.types" bindLabel="name" bindValue="id" 
                                 [clearable]="false"[selectOnTab]="false" [readonly]="!selectedCardModel"
-                                placeholder="Select Type" formControlName="type">
+                                placeholder="{{'select_type' | translate}}" formControlName="type">
                                 </ng-select>
                             </div>
                         </div>
                         <div class="mt-4 w-100 ms-3">
                             <div class="form-title mb-2">
-                                Drive Type
+                                {{'drive_type' | translate}}
                             </div>
                             <div [ngClass]="{'error-border': (isSubmitted && selectedCardModel && addCarForm!.get('drive')!.errors)}">
                                 <ng-select class="drive-types" [items]="selectedCardModel?.driveType" bindLabel="name" bindValue="id" 
                                 [clearable]="false"[selectOnTab]="false" [readonly]="!selectedCardModel"
-                                placeholder="Select Drive Type" formControlName="drive">
+                                placeholder="{{'select_drive_type' | translate}}" formControlName="drive">
                                 </ng-select>
                             </div>
                         </div>
@@ -98,12 +98,12 @@
                     <div class="d-flex justify-content-between field-flex">
                         <div class="mt-4 w-100 me-3">
                             <div class="form-title mb-2">
-                                Fuel Type
+                                {{'fuel_type' | translate}}
                             </div>
                             <div [ngClass]="{'error-border': (isSubmitted && selectedCardModel && addCarForm!.get('fuel')!.errors)}">
                                 <ng-select class="fuel-types" [items]="fuels" bindLabel="name" bindValue="id" 
                                 [clearable]="false"[selectOnTab]="false" [readonly]="!selectedCardModel"
-                                placeholder="Select Fuel Type" formControlName="fuel">
+                                placeholder="{{'select_fuel_type' | translate}}" formControlName="fuel">
                                 </ng-select>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                     <div class="">
                         <div class="mt-4 w-100">
                             <div class="form-title mb-2">
-                                Transmission
+                                {{'transmission' | translate}}
                             </div>
                             <div class="main-container">
                                 <div class="radio-buttons">
@@ -121,7 +121,7 @@
                                     <span class="radio-btn"><i class="bx bx-check"></i>
                                       <div class="hobbies-icon">
                                         <img src="https://media.istockphoto.com/id/689219926/photo/automatic-transmission-3d-illustration.jpg?s=612x612&w=0&k=20&c=ctmJw9MyGwlF8ZOl2_-rPg82EX42pB7S2zFF0oEkvg4=">
-                                        <h3 class="">Automatic</h3>
+                                        <h3 class="">{{'automatic' | translate}}</h3>
                                       </div>
                                     </span>
                                   </label>
@@ -130,7 +130,7 @@
                                     <span class="radio-btn"><i class="bx bx-check"></i>
                                       <div class="hobbies-icon">
                                         <img src="https://media.istockphoto.com/id/134518597/photo/gearshift.jpg?s=612x612&w=0&k=20&c=W4yZXC-LdR9jWksFrrS9EPcK6NesGc8FRTvOZarp1Rk=">
-                                        <h3 class="">Manual</h3>
+                                        <h3 class="">{{'manual' | translate}}</h3>
                                       </div>
                                     </span>
                                   </label>
@@ -143,19 +143,19 @@
 
             <div class="mt-4">
                 <div class="form-title">
-                    Car Description (Optional)
+                    {{'car_description' | translate}} ({{'optional' | translate}})
                 </div>
                 <div class="form-floating mt-2">
-                    <textarea class="form-control" style="height: 200px" placeholder="Car Description (Optional)" id="floatingTextarea"
+                    <textarea class="form-control" style="height: 200px" placeholder="{{'car_description' | translate}} ({{'optional' | translate}})" id="floatingTextarea"
                         formControlName="desc">
                     </textarea>
-                    <label for="floatingTextarea">Car Description (Optional)</label>
+                    <label for="floatingTextarea">{{'car_description' | translate}} ({{'optional' | translate}})</label>
                 </div>
             </div>
         </div>
 
         <div class="d-flex justify-content-end mt-4">
-            <button type="button" class="btn button ms-4" (click)="createCar()">Add Car</button>
+            <button type="button" class="btn button ms-4" (click)="createCar()">{{'add_car' | translate}}</button>
         </div>
     </form>
 </div>

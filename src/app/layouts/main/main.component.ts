@@ -3,11 +3,12 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { Languages } from '../../helpers/data';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [RouterOutlet, RouterLinkActive, RouterLink, NavBarComponent, TranslateModule],
+  imports: [CommonModule, RouterOutlet, RouterLinkActive, RouterLink, NavBarComponent, TranslateModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })
@@ -25,8 +26,17 @@ export class MainComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    var defaultLng = this.translateService.defaultLang || 'en-gb';
-    var language = Languages.find(local => local.code === defaultLng);
+    this._setLocalization();
+  }
+
+  private _setLocalization() {
+    var local = localStorage.getItem('local');
+    var defaultLanguage = local ? local : (this.translateService.defaultLang || 'en-gb');
+    console.log(defaultLanguage);
+    
+    this.translateService.use(defaultLanguage);
+    this.translateService.setDefaultLang(defaultLanguage);
+    var language = Languages.find(local => local.code === defaultLanguage);
     if(language) {
       this.selectedLanguage = language;
     }
@@ -52,18 +62,18 @@ export class MainComponent implements OnInit {
   }
 
   public changeLang() {
-    var languageCode = 'en-gb';
-    if(this.selectedLanguage.code === 'en-gb') {
+    var languageCode = this.translateService.defaultLang || 'en-gb';
+    if(languageCode === 'en-gb') {
       languageCode = 'nb-no';
     } else {
       languageCode = 'en-gb';
     }
-    console.log(languageCode);
-    
+    var language = Languages.find(local => local.code === languageCode);
+      if(language) {
+        this.selectedLanguage = language;
+      }
     this.translateService.use(languageCode);
     this.translateService.setDefaultLang(languageCode);
-    setTimeout(() => {
-      window.location.reload();
-    }, 1000);
+    localStorage.setItem('local', languageCode);
   }
 }

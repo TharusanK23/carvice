@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { NgApexchartsModule } from 'ng-apexcharts';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgApexchartsModule],
+  imports: [NgApexchartsModule, TranslateModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
